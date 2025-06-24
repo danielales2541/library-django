@@ -31,13 +31,12 @@ class BooksApiViewSet(ModelViewSet):
             Response({"error": f"Error al guardar el libro debido a un problema de integridad de datos: {e}"})
      
         return Response({"mensaje":"Book create sucefull"},status=status.HTTP_201_CREATED)
-    
-    @action(methods=['get'], detail=False, url_path="search")
-    def search_books(self, request):
+    #url_path=r"search/(?P<title>\w+)") no toma espacios
+    @action(methods=['get'], detail=False, url_path=r'search/(?P<title>[\w\s]+)')
+    def search_books(self, request, title=None):
         """
         Retrieve all active loans for a specific user.
         """
-        title = request.query_params.get('title')
         if not title:
             return Response({"error": "title is required"}, status=status.HTTP_400_BAD_REQUEST)
         try:

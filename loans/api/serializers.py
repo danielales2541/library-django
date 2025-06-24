@@ -18,6 +18,10 @@ class LoansSerializer(ModelSerializer):
 class LoansCreateSerializer(Serializer):
     book_id = IntegerField()
     user_id = IntegerField()
+class ReturnLoanSerializer(Serializer):
+    loan_id = IntegerField()
     returnDate = DateField()
+
+
 
     
