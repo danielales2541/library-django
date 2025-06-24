@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'books',  # Aplicación de libros
     'Users',  
     'loans',  
+    'rest_framework',
+    'drf_yasg',
+
 ]
 
 MIDDLEWARE = [
