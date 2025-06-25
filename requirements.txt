@@ -1,0 +1,5 @@
+Django==5.2.3
+djangorestframework==3.16.0
+mysqlclient>=2.2.0
+git+https://github.com/axnsan12/drf-yasg.git@master#egg=drf-yasg
+
